@@ -1,6 +1,10 @@
+"""
+    so function use test in python
+"""
 from ctypes import *
 import numpy as np
 
+# so file function preparation
 lib = np.ctypeslib.load_library("libSimpleMC.so", ".")
 lib.SimpleMonteCarloCall.argtypes = [c_double, c_double,
                                      c_double, c_double,
@@ -22,5 +26,6 @@ vol = 0.20
 r = 0.01
 N = 1000000
 
-result = lib.SimpleMonteCarloCall(expiry, strike, spot, vol, r, N)
-print(result)
+for i in range(5):
+    result = lib.SimpleMonteCarloCall(expiry, strike, spot, vol, r, N)
+    print(result)
