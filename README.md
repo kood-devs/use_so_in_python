@@ -1,7 +1,7 @@
-# Call .so file in Python
+# Call test of so file in Python
 ## 1. Make .so file
-### g++ -fPIC -c ./SimpleMC.cpp ./Random1.cpp
-### g++ -shared ./SimpleMC.o ./Random1.o -o libSimpleMC.so
+$ g++ -fPIC -c ./SimpleMC.cpp ./Random1.cpp
+$ g++ -shared ./SimpleMC.o ./Random1.o -o libSimpleMC.so
 
 ## 2. Call C++ code in .py file
-### See test_so.py
+$ python test_so.py
